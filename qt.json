@@ -1,0 +1,12 @@
+{
+  "name":"qt",
+  "disabled":true,
+  "buildsystem":"autotools",
+  "sources":[
+    {
+      "type":"archive",
+      "url":"https://download.qt.io/archive/qt/5.8/5.8.0/submodules/qtbase-opensource-src-5.8.0.tar.xz",
+      "sha256":"c17111ae02a44dc7be1ec2cf979a47ee9e58edf4904041a525c21f4fa53fc005"
+    }
+  ]
+}

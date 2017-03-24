@@ -1,0 +1,10 @@
+#!/bin/sh
+
+./bootstrap.sh "$@"
+
+cat <<EOF > "Makefile"
+all:
+	./b2 -j `nproc --ignore=1` --with-system
+install:
+	./b2 install --with-system
+EOF

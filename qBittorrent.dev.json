@@ -1,0 +1,40 @@
+{
+  "id":"org.qBittorrent.qbittorrent",
+  "branch":"dev",
+  "runtime":"org.kde.Platform",
+  "runtime-version":"master",
+  "sdk":"org.kde.Sdk",
+  "command":"qbittorrent",
+  "rename-desktop-file": "qBittorrent.desktop",
+  "rename-appdata-file": "qBittorrent.appdata.xml",
+  "rename-icon":"qbittorrent",
+  "cleanup":["/include"],
+  "finish-args":[
+    "--share=network",
+    "--socket=x11",
+    "--socket=system-bus",
+    "--socket=session-bus",
+    "--filesystem=host"
+  ],
+  "modules":[
+    {
+      "name":"qBittorrent",
+      "buildsystem":"autotools",
+      "sources":[
+        {
+          "type":"git",
+          "url":"https://github.com/qbittorrent/qBittorrent.git",
+          "branch":"master"
+        }
+      ],
+      "config-opts":[
+        "--with-boost=/app"
+      ],
+      "modules":[
+        "zlib.json",
+        "qt.json",
+        "libtorrent-rasterbar.json"
+      ]
+    }
+  ]
+}
