@@ -1,7 +1,11 @@
 {
   "name":"qt",
   "disabled":true,
-  "buildsystem":"autotools",
+  "buildsystem":"simple",
+  "build-commands":[
+    "./configure -prefix /app -confirm-license -opensource -nomake examples -no-angle -no-opengl -no-sql-sqlite -no-sql-sqlite -ssl -openssl-linked",
+    "make -j2 install"
+  ],
   "sources":[
     {
       "type":"archive",
