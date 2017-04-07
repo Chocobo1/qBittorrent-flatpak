@@ -2,6 +2,9 @@
   "name":"openssl",
   "disabled":true,
   "buildsystem":"autotools",
+  "config-opts":["shared", "enable-ec_nistp_64_gcc_128"],
+  "no-make-install":true,
+  "post-install":["make install_sw"],
   "sources":[
     {
       "type":"archive",
@@ -11,9 +14,7 @@
     {
       "type":"script",
       "dest-filename":"configure",
-      "commands":[
-        "./config"
-      ]
+      "commands":["./config $@"]
     }
   ]
 }
