@@ -5,13 +5,18 @@
   "config-opts":[
     "--disable-static",
     "--with-libiconv",
-    "--with-boost-libdir=/app/lib/"
+    "--with-boost=/app"
   ],
   "sources":[
     {
-      "type":"archive",
-      "url":"https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_0_11/libtorrent-rasterbar-1.0.11.tar.gz",
-      "sha256":"828d686770346f6da2c143c5a2844c5f5e407eb4a37982e90022763508abd62f"
+      "type":"git",
+      "url":"https://github.com/arvidn/libtorrent.git",
+      "branch":"RC_1_0"
+    },
+    {
+      "type":"script",
+      "dest-filename":"bootstrap",
+      "commands":["./autotool.sh"]
     }
   ],
   "modules":[
