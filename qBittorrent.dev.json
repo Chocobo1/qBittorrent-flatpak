@@ -1,38 +1,42 @@
 {
-  "id":"org.qBittorrent.qbittorrent",
-  "branch":"dev",
-  "runtime":"org.kde.Platform",
-  "runtime-version":"master",
-  "sdk":"org.kde.Sdk",
-  "command":"qbittorrent",
-  "rename-desktop-file": "qBittorrent.desktop",
-  "rename-appdata-file": "qBittorrent.appdata.xml",
-  "rename-icon":"qbittorrent",
-  "cleanup":["/include"],
-  "finish-args":[
+  "id": "org.qBittorrent.qbittorrent",
+  "branch": "dev",
+  "runtime": "org.kde.Platform",
+  "runtime-version": "5.9",
+  "sdk": "org.kde.Sdk",
+  "command": "qbittorrent",
+  "rename-desktop-file": "qbittorrent.desktop",
+  "rename-appdata-file": "qbittorrent.appdata.xml",
+  "rename-icon": "qbittorrent",
+  "cleanup": [
+    "/include"
+  ],
+  "finish-args": [
     "--share=network",
-    "--socket=x11",
+    "--filesystem=host",
     "--socket=system-bus",
     "--socket=session-bus",
-    "--filesystem=host"
+    "--socket=x11",
+    "--socket=wayland"
   ],
-  "modules":[
+  "modules": [
     {
-      "name":"qBittorrent",
-      "buildsystem":"autotools",
-      "sources":[
+      "name": "qBittorrent",
+      "buildsystem": "autotools",
+      "sources": [
         {
-          "type":"git",
-          "url":"https://github.com/qbittorrent/qBittorrent.git",
-          "branch":"master"
+          "type": "git",
+          "url": "https://github.com/qbittorrent/qBittorrent.git",
+          "branch": "master"
         }
       ],
-      "config-opts":[
+      "config-opts": [
         "--with-boost=/app"
       ],
-      "modules":[
+      "modules": [
         "zlib.json",
         "qt.json",
+        "openssl.json",
         "libtorrent-rasterbar.json"
       ]
     }

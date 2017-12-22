@@ -1,10 +1,10 @@
 ## 1. Prepare build environment
-  * Install flatpak<br>
-    See: [Getting Flatpak](http://flatpak.org/getting.html)
+  * Install `flatpak-builder`<br>
+    See: [Getting Flatpak](https://flatpak.org/getting)
   * Install required SDK & runtime:
     ```shell
-    flatpak remote-add kde --from https://distribute.kde.org/kderuntime.flatpakrepo
-    flatpak install kde org.kde.Platform org.kde.Sdk
+    flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo --if-not-exists --user
+    flatpak install flathub org.kde.Platform org.kde.Sdk --user
     ```
 
 ## 2. Build qBittorrent
@@ -27,11 +27,11 @@
   * Local
     * Add the created repository and name it `qbt`:
       ```shell
-      flatpak remote-add qbt flatpak_qbt_repo  # --no-gpg-verify
+      flatpak remote-add qbt flatpak_qbt_repo --user # --no-gpg-verify
       ```
     * Install:
       ```shell
-      flatpak install qbt org.qBittorrent.qbittorrent
+      flatpak install qbt org.qBittorrent.qbittorrent --user
       ```
   * Run qBittorrent:
     ```shell
@@ -53,6 +53,6 @@
     ```
   * Remove SDK & runtime:
     ```shell
-    flatpak uninstall org.kde.Platform.Locale org.kde.Platform org.kde.Sdk.Locale org.kde.Sdk
-    flatpak remote-delete kde
+    flatpak uninstall org.kde.Platform org.kde.Sdk --user
+    flatpak remote-delete flathub --user
     ```

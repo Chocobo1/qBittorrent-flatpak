@@ -1,38 +1,42 @@
 {
-  "id":"org.qBittorrent.qbittorrent",
-  "branch":"stable",
-  "runtime":"org.kde.Platform",
-  "runtime-version":"master",
-  "sdk":"org.kde.Sdk",
-  "command":"qbittorrent",
-  "rename-desktop-file": "qBittorrent.desktop",
-  "rename-appdata-file": "qBittorrent.appdata.xml",
-  "rename-icon":"qbittorrent",
-  "cleanup":["/include"],
-  "finish-args":[
+  "id": "org.qBittorrent.qbittorrent",
+  "branch": "stable",
+  "runtime": "org.kde.Platform",
+  "runtime-version": "5.9",
+  "sdk": "org.kde.Sdk",
+  "command": "qbittorrent",
+  "rename-desktop-file": "qbittorrent.desktop",
+  "rename-appdata-file": "qbittorrent.appdata.xml",
+  "rename-icon": "qbittorrent",
+  "cleanup": [
+    "/include"
+  ],
+  "finish-args": [
     "--share=network",
-    "--socket=x11",
+    "--filesystem=host",
     "--socket=system-bus",
     "--socket=session-bus",
-    "--filesystem=host"
+    "--socket=x11",
+    "--socket=wayland"
   ],
-  "modules":[
+  "modules": [
     {
-      "name":"qBittorrent",
-      "buildsystem":"autotools",
-      "sources":[
+      "name": "qBittorrent",
+      "buildsystem": "autotools",
+      "sources": [
         {
-          "type":"archive",
-          "url":"https://downloads.sourceforge.net/project/qbittorrent/qbittorrent/qbittorrent-3.3.12/qbittorrent-3.3.12.tar.xz",
-          "sha256":"56528c47f09b316ecf682e3896157c76c18898ef996728b0c5186e05a711466f"
+          "type": "archive",
+          "url": "https://downloads.sourceforge.net/project/qbittorrent/qbittorrent/qbittorrent-4.0.3/qbittorrent-4.0.3.tar.xz",
+          "sha256": "9a03b84e6d2ac81a0add84a7946033ff9ea854de49252069e478b9f6efce6bd2"
         }
       ],
-      "config-opts":[
+      "config-opts": [
         "--with-boost=/app"
       ],
-      "modules":[
+      "modules": [
         "zlib.json",
         "qt.json",
+        "openssl.json",
         "libtorrent-rasterbar.json"
       ]
     }

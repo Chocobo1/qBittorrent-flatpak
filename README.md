@@ -5,7 +5,7 @@
 Refer to [maintainer.md](./maintainer.md) file
 
 ## Just want to use qBittorrent
-* First, install flatpak: [Getting Flatpak](http://flatpak.org/getting.html)
+* First, install flatpak: [Getting Flatpak](https://flatpak.org/getting)
 * If your distro supports "click to download" then use the following link:<br>
   [Latest stable](https://cdn.rawgit.com/Chocobo1/qBittorrent-flatpak/master/qBittorrent.flatpakref)
 * Otherwise do the following:
